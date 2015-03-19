@@ -9,9 +9,6 @@ alias brake='bundle exec rake'
 
 alias gc='git commit -v'
 
-export RBENV_ROOT=/usr/local/var/rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 export PATH="./bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 
