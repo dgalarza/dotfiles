@@ -1,0 +1,22 @@
+let mapleader = ","
+
+nnoremap <leader>w <C-w>v<C-w>l
+
+" Disable wordwrap
+set nowrap
+
+set t_Co=256
+set background=dark
+colorscheme solarized
+set colorcolumn=80
+
+" navigate tabs
+nmap <Leader>nt :tabnew<CR>
+map <leader><tab> :tabn <CR>
+map <leader>p<tab> :tabp <CR>
+
+map <Leader>t <Plug>RunCurrentSpecFile
+map <Leader>s <Plug>RunFocusedSpec
+map <Leader>l <Plug>RunMostRecentSpec
+
+let g:TList_Ctags_Cmd="/usr/local/bin/ctags"

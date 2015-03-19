@@ -1,0 +1,4 @@
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'gabebw/vim-spec-runner'
+Plugin 'vim-scripts/saturn.vim'
+Plugin 'leafo/moonscript-vim'

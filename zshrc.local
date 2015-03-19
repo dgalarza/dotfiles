@@ -1,0 +1,18 @@
+source /usr/local/share/chruby/chruby.sh
+chruby 2.2.0
+
+alias be='bundle exec'
+alias bi='bundle install'
+alias fs='foreman start'
+alias rc='rails console'
+alias brake='bundle exec rake'
+
+alias gc='git commit -v'
+
+export RBENV_ROOT=/usr/local/var/rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+export PATH="./bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+
+$(boot2docker shellinit)
