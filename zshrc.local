@@ -13,3 +13,5 @@ export PATH="./bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 
 $(boot2docker shellinit)
+
+alias gpg="gpg2"
