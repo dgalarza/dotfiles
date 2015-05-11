@@ -23,4 +23,7 @@ let g:TList_Ctags_Cmd="/usr/local/bin/ctags"
 
 vmap <Leader>z :call I18nTranslateString()<CR>
 
+let g:indentobject_meaningful_indentation = ['haml', 'sass', 'yaml', 'markdown']
+let g:indentLine_fileType = ['yaml']
+
 let g:spec_runner_dispatcher = 'call Send_to_Tmux("clear\n{command}\n")'
