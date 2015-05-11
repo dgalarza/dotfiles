@@ -1,5 +1,6 @@
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'gabebw/vim-spec-runner'
+Plugin 'dgalarza/vim-spec-runner'
 Plugin 'vim-scripts/saturn.vim'
 Plugin 'leafo/moonscript-vim'
 Plugin 'stefanoverna/vim-i18n'
+Plugin 'jgdavey/tslime.vim'
