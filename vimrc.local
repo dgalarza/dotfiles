@@ -27,3 +27,5 @@ let g:indentobject_meaningful_indentation = ['haml', 'sass', 'yaml', 'markdown']
 let g:indentLine_fileType = ['yaml']
 
 let g:spec_runner_dispatcher = 'call Send_to_Tmux("clear\n{command}\n")'
+
+autocmd BufRead,BufNewFile *.es6 setfiletype javascript
