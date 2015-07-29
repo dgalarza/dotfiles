@@ -1,5 +1,5 @@
 source /usr/local/share/chruby/chruby.sh
-chruby 2.2.0
+chruby 2.2.2
 
 alias be='bundle exec'
 alias bi='bundle install'
