@@ -5,6 +5,9 @@ nnoremap <leader>w <C-w>v<C-w>l
 " Disable wordwrap
 set nowrap
 
+set list  " Shows invisible characters
+set listchars=tab:▸\ ,eol:¬
+
 set t_Co=256
 set background=dark
 colorscheme solarized
