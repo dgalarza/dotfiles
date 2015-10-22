@@ -25,3 +25,5 @@ alias unhitch='hitch -u'
 
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+
+source /usr/local/bin/virtualenvwrapper.sh
