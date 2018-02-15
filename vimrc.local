@@ -10,8 +10,8 @@ set listchars=tab:▸\ ,eol:¬
 
 set t_Co=256
 set background=dark
-colorscheme vimbrant
 set colorcolumn=80
+colorscheme solarized
 
 " navigate tabs
 nmap <Leader>nt :tabnew<CR>
