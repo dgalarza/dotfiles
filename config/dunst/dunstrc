@@ -1,0 +1,25 @@
+[base16_low]
+    msg_urgency = low
+    background = "#FFFFFF"
+    foreground = "#333333"
+
+[base16_normal]
+    msg_urgency = normal
+    background = "#FFFFFF"
+    foreground = "#333333"
+
+[base16_critical]
+    msg_urgency = critical
+    background = "#FFFFFF"
+    foreground = "#333333"
+
+[experimental]
+  per_monitor_dpi = true
+
+[global]
+  padding = 50
+  font = San Francisco Display Regular 8
+  geometry = "500x0-30+80"
+  format = "<b>%a<b>\n%b"
+  horizontal_padding = 10
+  transparency = 5
