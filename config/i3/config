@@ -220,6 +220,11 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Lock
+bindsym $mod+shift+x exec betterlockscreen --lock
+
+exec --no-startup-id betterlockscreen -u ~/Pictures/Wallpapers
+
 exec xrandr --dpi 210
 exec --no-startup-id exec bash $HOME/.fehbg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
