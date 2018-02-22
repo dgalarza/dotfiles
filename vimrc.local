@@ -1,3 +1,4 @@
+let base16colorspace=256
 let mapleader = ","
 
 nnoremap <leader>w <C-w>v<C-w>l
@@ -8,10 +9,11 @@ set nowrap
 set list  " Shows invisible characters
 set listchars=tab:▸\ ,eol:¬
 
+set termguicolors
 set t_Co=256
 set background=dark
 set colorcolumn=80
-colorscheme Tomorrow-Night-Bright
+colorscheme base16-materia
 
 " navigate tabs
 nmap <Leader>nt :tabnew<CR>
