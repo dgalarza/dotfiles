@@ -38,7 +38,7 @@ border-size = 0
 border-color = #000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 8
 
 module-margin-left = 5
 module-margin-right = 2
@@ -50,15 +50,9 @@ font-3 = FontAwesome5Free:style=Solid:pixelsize=8
 font-4 = FontAwesome5Brands:style=Solid:pixelsize=8
 
 modules-left = bspwm i3
-modules-center = date
-modules-right = volume wlan battery powermenu
+modules-center = 
+modules-right = volume wlan battery date
 
-tray-position = right
-tray-padding = 2
-;tray-transparent = true
-;tray-background = #0063ff
-
-;wm-restack = bspwm
 wm-restack = i3
 
 ;override-redirect = true
@@ -246,11 +240,7 @@ interval = 5
 date = "%b %e"
 time = %I:%M
 
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-# format-underline = #0a6cf5
-
-label =  %date% %time%
+label = %date% %time%
 
 [module/volume]
 type = internal/volume
