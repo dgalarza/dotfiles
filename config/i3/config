@@ -226,6 +226,6 @@ bindsym $mod+shift+x exec betterlockscreen --lock
 exec --no-startup-id betterlockscreen -u ~/Pictures/Wallpapers
 
 exec xrandr --dpi 210
-exec --no-startup-id exec bash $HOME/.fehbg
+exec_always --no-startup-id exec bash nitrogen --random --set-scaled $HOME/Pictures/Wallpaper
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id compton
