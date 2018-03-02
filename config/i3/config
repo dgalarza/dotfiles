@@ -36,12 +36,12 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 set $tb-red              #ed3e44
-set $bg-color 	         #222222
+set $bg-color 	         #3d3e44
 set $inactive-bg-color   #222222
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
-set $indicator           #ed3e44
+set $indicator           #3d3e44
 
 # window colors
 #                       border              background         text                 indicator
