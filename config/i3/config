@@ -110,6 +110,10 @@ bindsym $mod+a focus parent
 # Screenshot
 bindsym Print exec scrot '%Y-%m-%d-%H:%M:%S.png' -e 'mv $f ~/Pictures/Screenshots'
 
+# Move workspace to other monitor
+bindsym $mod+Shift+m move workspace to output right
+bindsym $mod+m move workspace to output left
+
 # focus the child container
 #bindsym $mod+d focus child
 
