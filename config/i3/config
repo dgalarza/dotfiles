@@ -52,7 +52,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2
+bindsym $mod+d exec rofi -show run -lines 5 -eh 2
 
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
