@@ -13,7 +13,7 @@ set termguicolors
 set t_Co=256
 set background=dark
 set colorcolumn=80
-colorscheme base16-materia
+colorscheme nord
 
 " navigate tabs
 nmap <Leader>nt :tabnew<CR>
