@@ -109,6 +109,7 @@ bindsym $mod+a focus parent
 
 # Screenshot
 bindsym Print exec scrot '%Y-%m-%d-%H:%M:%S.png' -e 'mv $f ~/Pictures/Screenshots'
+bindsym Shift+Print exec scrot -u '%Y-%m-%d-%H:%M:%S.png' -e 'mv $f ~/Pictures/Screenshots'
 
 # Move workspace to other monitor
 bindsym $mod+Shift+m move workspace to output right
