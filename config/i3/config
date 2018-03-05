@@ -190,9 +190,7 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-# for_window [class="."] border pixel 1
-hide_edge_borders none
-new_window 1pixel
+for_window [class="."] border pixel 2
 
 bindsym $mod+r mode "resize"
 
