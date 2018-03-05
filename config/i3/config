@@ -222,6 +222,12 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Open specific applications in floating mode
+for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="Blueberry.py"] floating enable border normal
+for_window [class="Pavucontrol"] floating enable border normal
+for_window [class="(?i)System-config-printer.py"] floating enable border normal
+
 # Lock
 bindsym $mod+shift+x exec betterlockscreen --lock
 
