@@ -119,7 +119,7 @@ bindsym $mod+m move workspace to output left
 #bindsym $mod+d focus child
 
 # terminal
-set $workspace1 "1:"
+set $workspace1 "1:"
 
 # firefox
 set $workspace2 "2:"
@@ -127,8 +127,8 @@ set $workspace2 "2:"
 # slack
 set $workspace3 "3:"
 
-# signal
-set $workspace4 "4:"
+# server
+set $workspace4 "4:"
 
 # spotify
 set $workspace10 "5:"
