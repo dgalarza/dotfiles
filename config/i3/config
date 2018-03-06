@@ -236,4 +236,3 @@ exec --no-startup-id betterlockscreen -u ~/Pictures/Wallpapers
 
 exec --no-startup-id nitrogen --random --set-scaled $HOME/Pictures/Wallpapers
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id compton
