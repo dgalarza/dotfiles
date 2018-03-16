@@ -8,18 +8,17 @@
 ;=====================================================
 
 [colors]
-background = #222
-background-alt = #444
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #ed3e44
-secondary = #e60053
-alert = #bd2c40
+background = #2e3440
+foreground = #d8dee9
+foreground-alt = #2e3440
+primary = #88c0d0
+secondary = #2e3440
+alert = #bf616a
 
 [bar/eDP1]
 monitor = ${env:MONITOR:eDP1}
 width = 100%
-height = 50
+height = 60
 dpi = 170
 radius = 0.0
 fixed-center = true
@@ -27,8 +26,7 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 1
-line-color = #f00
+line-size = 0
 
 border-size = 0
 border-color = #000000
@@ -39,8 +37,8 @@ padding-right = 8
 module-margin-left = 3
 module-margin-right = 2
 
-font-0 = SFNSDisplay:style=regular:pixelsize=13;1
-font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
+font-0 = SFNSDisplay:style=regular:pixelsize=12;1
+font-1 = unifont:fontformat=truetype:size=10:30tialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = FontAwesome5Free:style=Solid:pixelsize=10
 font-4 = FontAwesome5Brands:style=Solid:pixelsize=10
@@ -54,47 +52,21 @@ wm-restack = i3
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
-
 [bar/DP2]
 inherit = bar/eDP1
 monitor = ${env:MONITOR:DP2}
-height = 60
 
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
+[bar/HDMI1]
+inherit = bar/DP2
+monitor = ${env:MONITOR:HDMI1}
 
 [module/bspwm]
 type = internal/bspwm
 
 label-focused = %index%
 label-focused-background = ${colors.primary}
-label-focused-underline= ${colors.primary}
+label-focused-underline = ${colors.primary}
+label-focused-foreground = ${colors.secondary}
 label-focused-padding = 3
 
 label-occupied = %index%
@@ -128,6 +100,7 @@ label-focused = %name%
 label-focused-background = ${module/bspwm.label-focused-background}
 label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
+label-focused-foreground = ${module/bspwm.label-focused-foreground}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
@@ -138,6 +111,7 @@ label-visible = %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
+label-visible-foreground = ${self.label-focused-foreground}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
