@@ -115,6 +115,9 @@ bindsym Shift+Print exec scrot -u '%Y-%m-%d-%H:%M:%S.png' -e 'mv $f ~/Pictures/S
 bindsym $mod+Shift+m move workspace to output right
 bindsym $mod+m move workspace to output left
 
+# Display settings
+bindsym XF86Display exec $HOME/config/monitors
+
 # focus the child container
 #bindsym $mod+d focus child
 
