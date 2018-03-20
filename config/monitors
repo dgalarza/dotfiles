@@ -1,5 +1,11 @@
 #!/bin/sh
 
+function extendDisplay() {
+  xrandr --output $1 --auto --panning 5120x2880+2560+0 --scale 2x2 --right-of eDP1 --primary
+  nitrogen --random --set-scaled --head=0 $HOME/Pictures/Wallpapers
+  nitrogen --random --set-scaled --head=1 $HOME/Pictures/Wallpapers
+}
+
 if xrandr -q | grep "DP2 connected"; then
   extendDisplay "DP2"
 elif xrandr -q | grep "HDMI1 connected"; then
@@ -8,9 +14,3 @@ else
   xrandr --auto
   nitrogen --random --set-scaled $HOME/Pictures/Wallpapers
 fi
-
-function extendDisplay() {
-  xrandr --output $1 --auto --panning 5120x2880+2560+0 --scale 2x2 --right-of eDP1 --primary
-  nitrogen --random --set-scaled --head=0 $HOME/Pictures/Wallpapers
-  nitrogen --random --set-scaled --head=1 $HOME/Pictures/Wallpapers
-}
