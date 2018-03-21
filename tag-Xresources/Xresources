@@ -1,0 +1,3 @@
+#include ".Xresources.d/local"
+#include ".Xresources.d/colors"
+#include ".Xresources.d/rofi"
