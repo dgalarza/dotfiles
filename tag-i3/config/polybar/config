@@ -45,7 +45,7 @@ font-4 = FontAwesome5Brands:style=Solid:pixelsize=10
 
 modules-left = bspwm i3
 modules-center = 
-modules-right = volume wlan battery date
+modules-right = volume wlan battery cpu date
 
 wm-restack = i3
 
@@ -187,6 +187,11 @@ ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-foreground = #ffffff
+
+[module/cpu]
+type = internal/cpu
+format = <label>
+label = %percentage%%
 
 [settings]
 screenchange-reload = true
