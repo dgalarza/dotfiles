@@ -1,4 +1,3 @@
-Plug 'altercation/vim-colors-solarized'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'chriskempson/base16-vim'
