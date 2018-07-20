@@ -40,5 +40,8 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 autocmd BufWritePre *.js Prettier
 
+nnoremap <leader>r :source $MYVIMRC<cr>
+nnoremap <leader>h :e %:h
+
 " Replace ctrlp with FZF
 nnoremap <C-P> :Files<CR>
