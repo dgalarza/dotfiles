@@ -1,4 +1,5 @@
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'chriskempson/base16-vim'
+Plug 'prettier/vim-prettier'
 Plug 'arcticicestudio/nord-vim'
