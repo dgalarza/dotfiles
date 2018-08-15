@@ -9,7 +9,6 @@ set nowrap
 set list  " Shows invisible characters
 set listchars=tab:▸\ ,eol:¬
 
-set termguicolors
 set t_Co=256
 set background=dark
 set colorcolumn=80
