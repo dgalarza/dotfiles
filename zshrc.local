@@ -1,19 +1,6 @@
-source /usr/local/share/chruby/chruby.sh
-chruby 2.2.2
-
-alias be='bundle exec'
-alias bi='bundle install'
-alias fs='foreman start'
-alias rc='rails console'
-alias brake='bundle exec rake'
-
-alias gc='git commit -v'
-
 export PATH="./bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 
-alias gpg="gpg2"
-alias ls="ls --color=always"
+. $HOME/.asdf/asdf.sh
 
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+. $HOME/.asdf/completions/asdf.bash
