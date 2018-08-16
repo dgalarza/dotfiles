@@ -44,3 +44,11 @@ nnoremap <leader>h :e %:h
 
 " Replace ctrlp with FZF
 nnoremap <C-P> :Files<CR>
+
+
+set path+=app/javascript
+
+let g:rails_projections = {
+      \ "spec/javascript/*.spec.jsx": { "alternate": "app/javascript/{}.jsx" },
+      \ "app/javascript/*.jsx": { "alternate": "spec/javascript/{}.spec.jsx" }
+      \ }
