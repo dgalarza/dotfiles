@@ -16,3 +16,4 @@ tmp/**/*
 /tags
 .config/nvim/lazy-lock.json
 .config/tmux/plugins
+.config/fish/fish_variables
