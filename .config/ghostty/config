@@ -1,3 +1,4 @@
 keybind = global:alt+t=toggle_quick_terminal
 font-size = 18
 theme = catppuccin-mocha.conf
+keybind = shift+enter=text:\x1b\r
