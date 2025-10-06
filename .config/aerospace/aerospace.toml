@@ -64,6 +64,8 @@ ctrl-8 = 'workspace 8'
 ctrl-9 = 'workspace 9'
 ctrl-0 = 'workspace 10'
 
+cmd-shift-j = 'move-workspace-to-monitor --wrap-around next'
+
 cmd-shift-1 = 'move-node-to-workspace 1'
 cmd-shift-2 = 'move-node-to-workspace 2'
 cmd-shift-3 = 'move-node-to-workspace 3'
