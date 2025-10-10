@@ -9,3 +9,7 @@ end
 
 zoxide init fish | source
 starship init fish | source
+
+if functions -q local_config
+    local_config
+end

@@ -18,3 +18,4 @@ tmp/**/*
 .config/tmux/plugins
 .config/fish/fish_variables
 .gitconfig.local
+local_config.fish
