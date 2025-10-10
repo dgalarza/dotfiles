@@ -18,7 +18,6 @@
   autocrlf = input
   pager = delta 
 [merge]
-	conflictStyle = zdiff3
   ff = only
 [commit]
   template = ~/.gitmessage
@@ -31,12 +30,5 @@
 [user]
   name = Damian Galarza
   email = galarza.d@gmail.com
-[interactive]
-	diffFilter = delta --color-only
-[delta]
-	navigate = true
-  side-by-side = true
-  line-numbers = true
-  syntax-theme = Catppuccin Frappe
 [include]
   path = ~/.gitconfig.local
