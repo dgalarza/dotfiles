@@ -1,5 +1,7 @@
 fish_add_path $HOME/.local/bin
 
+set -gx fish_function_path ~/.config/fish/functions_local $fish_function_path
+
 alias vim=nvim
 
 if status is-interactive

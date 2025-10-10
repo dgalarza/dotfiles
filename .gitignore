@@ -19,3 +19,4 @@ tmp/**/*
 .config/fish/fish_variables
 .gitconfig.local
 local_config.fish
+.config/fish/functions_local/*
