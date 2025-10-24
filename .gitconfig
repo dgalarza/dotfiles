@@ -16,7 +16,6 @@
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
-  pager = delta 
 [merge]
   ff = only
 [commit]
