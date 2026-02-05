@@ -20,3 +20,4 @@ tmp/**/*
 .gitconfig.local
 local_config.fish
 .config/fish/functions_local/*
+.config/fish/**/*.local.fish
