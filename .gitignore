@@ -21,3 +21,8 @@ tmp/**/*
 local_config.fish
 .config/fish/functions_local/*
 .config/fish/**/*.local.fish
+
+.local/bin/uv
+.local/bin/uvx
+
+*.local.*
