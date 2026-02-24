@@ -6,7 +6,8 @@
   },
   "enabledPlugins": {
     "frontend-design@claude-code-plugins": true,
-    "conventional-commits@dgalarza-workflows": true
+    "conventional-commits@dgalarza-workflows": true,
+    "claudit@quickstop": true
   },
   "alwaysThinkingEnabled": true
 }
