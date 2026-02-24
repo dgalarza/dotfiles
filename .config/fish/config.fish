@@ -2,6 +2,7 @@ fish_add_path $HOME/.local/bin
 
 set ENABLE_LSP_TOOLS 1
 set CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS 1
+set CLAUDE_CODE_DISABLE_AUTO_MEMORY 1
 
 set -gx fish_function_path ~/.config/fish/functions_local $fish_function_path
 
