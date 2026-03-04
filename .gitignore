@@ -26,3 +26,4 @@ local_config.fish
 .local/bin/uvx
 
 *.local.*
+.zshrc.local
