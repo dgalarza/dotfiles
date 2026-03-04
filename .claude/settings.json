@@ -7,7 +7,10 @@
   "enabledPlugins": {
     "frontend-design@claude-code-plugins": true,
     "conventional-commits@dgalarza-workflows": true,
-    "claudit@quickstop": true
+    "claudit@quickstop": true,
+    "meeting-transcript@dgalarza-workflows": true,
+    "codebase-readiness@dgalarza-workflows": true
   },
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": true,
+  "skipDangerousModePermissionPrompt": true
 }
