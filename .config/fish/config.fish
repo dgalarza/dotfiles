@@ -23,3 +23,6 @@ end
 
 # OpenClaw Completion
 source "/home/dgalarza/.openclaw/completions/openclaw.fish"
+
+# Added by LM Studio CLI tool (lms)
+set -gx PATH $PATH /home/dgalarza/.lmstudio/bin
