@@ -90,8 +90,21 @@ Custom scripts in `.local/bin/`:
 - `git up` fetches origin and rebases onto the primary branch
 - `git delete-branch` removes a branch from both remote and local
 
+## Claude Code
+
+Global [Claude Code](https://docs.anthropic.com/en/docs/claude-code) configuration lives in `.claude/`. This includes a global `CLAUDE.md` with cross-project context, slash commands, and reusable skills (marketing, content strategy, CRO, SEO, and more).
+
+Run the setup script to symlink everything into `~/.claude/`:
+
+```bash
+./setup-claude.sh
+```
+
+The script also sets up a `~/vault` symlink to your Obsidian vault for private skills and business context that shouldn't live in a public repo.
+
 ## Repo Structure
 
 - `.zshrc` at the repo root
 - Tool configs under `.config/` (Ghostty, Tmux, Neovim, Starship, AeroSpace)
 - Custom scripts in `.local/bin/`
+- `.claude/` for Claude Code global config (skills, commands, CLAUDE.md)
