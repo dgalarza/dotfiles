@@ -1,0 +1,50 @@
+<div class="space-y-12 p-8">
+  <!-- Variant Examples -->
+  <section>
+    <h2 class="text-2xl font-bold mb-6">Variants</h2>
+    <div class="space-y-4">
+      <div>
+        <h3 class="text-sm font-semibold text-gray-600 mb-2">Primary</h3>
+        <%= render [COMPONENT_NAME]Component.new(variant: :primary) %>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold text-gray-600 mb-2">Secondary</h3>
+        <%= render [COMPONENT_NAME]Component.new(variant: :secondary) %>
+      </div>
+    </div>
+  </section>
+
+  <!-- Size Examples -->
+  <section>
+    <h2 class="text-2xl font-bold mb-6">Sizes</h2>
+    <div class="flex gap-4 flex-wrap">
+      <div>
+        <h3 class="text-sm font-semibold text-gray-600 mb-2">Small</h3>
+        <%= render [COMPONENT_NAME]Component.new(size: :sm) %>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold text-gray-600 mb-2">Medium</h3>
+        <%= render [COMPONENT_NAME]Component.new(size: :md) %>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold text-gray-600 mb-2">Large</h3>
+        <%= render [COMPONENT_NAME]Component.new(size: :lg) %>
+      </div>
+    </div>
+  </section>
+
+  <!-- States Examples -->
+  <section>
+    <h2 class="text-2xl font-bold mb-6">States</h2>
+    <div class="space-y-4">
+      <div>
+        <h3 class="text-sm font-semibold text-gray-600 mb-2">Default</h3>
+        <%= render [COMPONENT_NAME]Component.new %>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold text-gray-600 mb-2">Disabled</h3>
+        <%= render [COMPONENT_NAME]Component.new(disabled: true) %>
+      </div>
+    </div>
+  </section>
+</div>
