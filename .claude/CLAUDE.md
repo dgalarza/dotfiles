@@ -17,10 +17,9 @@ This is my second brain. Use the `obsidian-vault-manager` skill for file operati
 | Content planning | `~/vault/2-Areas/Content Creation/` |
 | Content pillars | `~/vault/2-Areas/Content Creation/Content Pillars.md` |
 | Voice profile | `~/vault/2-Areas/Content Creation/Blog Writing Voice Profile.md` |
-| Blog drafts | `~/vault/1-Projects/Blog Drafts/` |
 | YouTube pipeline | `~/vault/1-Projects/YouTube Channel/Pipeline/` |
 | YouTube strategy | `~/vault/1-Projects/YouTube Channel/Strategy/` |
-| Newsletter drafts | `~/vault/1-Projects/Newsletter/` |
+| Newsletter strategy | `~/vault/2-Areas/Content Creation/Welcome Email Sequence Plan.md` |
 | Social scheduling | `~/vault/3-Resources/Social Media/Buffer Posting Schedule and Strategy.md` |
 | Call prep / reviews | `~/vault/0-Capture & Process/Reviews/` |
 
@@ -46,5 +45,6 @@ Private skills (rate card, sponsor evaluation, booking intake):
 
 - All written content follows the voice profile
 - Obsidian for planning and ideation, project repos for publishing
-- Blog drafts start in Obsidian, move to the Hugo repo when ready to publish
+- Blog posts live in the Hugo repo (`dgalarza.github.io`), not Obsidian — Obsidian holds draft notes and ideas only
+- Newsletter is managed via Buttondown, associated with `dgalarza.github.io`
 - Calm, direct, precise tone — no hype, no beginner framing
