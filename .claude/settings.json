@@ -1,18 +1,20 @@
 {
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
   "includeCoAuthoredBy": false,
   "statusLine": {
     "type": "command",
-    "command": "npx -y @owloops/claude-powerline@latest --style=powerline"
+    "command": "npx -y @owloops/claude-powerline@latest --style=powerline --disable=cost"
   },
   "enabledPlugins": {
-    "frontend-design@claude-code-plugins": true,
-    "conventional-commits@dgalarza-workflows": true,
-    "claudit@quickstop": true,
-    "meeting-transcript@dgalarza-workflows": true,
-    "codebase-readiness@dgalarza-workflows": true,
     "agent-ready@dgalarza-workflows": true,
-    "skill-creator@claude-plugins-official": true,
-    "example-skills@anthropic-agent-skills": true
+    "codebase-readiness@dgalarza-workflows": true,
+    "claudit@quickstop": true,
+    "example-skills@anthropic-agent-skills": true,
+    "meeting-transcript@dgalarza-workflows": true,
+    "ruby-lsp@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "anthropic-agent-skills": {
@@ -21,8 +23,13 @@
         "repo": "anthropics/skills"
       },
       "autoUpdate": true
+    },
+    "dgalarza-workflows": {
+      "source": {
+        "source": "github",
+        "repo": "dgalarza/claude-code-workflows"
+      },
+      "autoUpdate": true
     }
-  },
-  "alwaysThinkingEnabled": true,
-  "skipDangerousModePermissionPrompt": true
+  }
 }
