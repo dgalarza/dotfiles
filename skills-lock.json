@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "buttondown": {
+      "source": "dgalarza/agent-skills",
+      "sourceType": "github",
+      "computedHash": "7f0be0dc64c3543f43490d29329db71581cec06f3538f0244dca0c926fb0bc31"
+    }
+  }
+}
