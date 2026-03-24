@@ -27,3 +27,6 @@ local_config.fish
 
 *.local.*
 .zshrc.local
+.claude/worktrees
+.claude/**.local.*
+CLAUDE.local.md
