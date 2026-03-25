@@ -1,6 +1,11 @@
 {
   "version": 1,
   "skills": {
+    "buffer": {
+      "source": "dgalarza/agent-skills",
+      "sourceType": "github",
+      "computedHash": "76322071653dc1f094f7df5029ce50cba64f2e08007af4a97fe864abb8719055"
+    },
     "buttondown": {
       "source": "dgalarza/agent-skills",
       "sourceType": "github",
