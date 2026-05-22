@@ -92,9 +92,9 @@ Custom scripts in `.local/bin/`:
 
 ## Claude Code
 
-Global [Claude Code](https://docs.anthropic.com/en/docs/claude-code) configuration lives in `.claude/`. Agent skills live in `.agents/skills/` so they can be shared across agents and bootstrapped into `~/.agents/skills/`.
+Global [Claude Code](https://docs.anthropic.com/en/docs/claude-code) configuration lives in `.claude/`. Agent skills live in `.agents/skills/` so they can be shared across agents and bootstrapped into `~/.agents/skills/`, then mirrored into `~/.claude/skills/` for Claude Code.
 
-Run the setup script to symlink Claude config into `~/.claude/` and public/private agent skills into `~/.agents/skills/`:
+Run the setup script to symlink Claude config into `~/.claude/`, public/private agent skills into `~/.agents/skills/`, and compatibility links into `~/.claude/skills/`:
 
 ```bash
 ./setup-claude.sh

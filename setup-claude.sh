@@ -41,6 +41,7 @@ VAULT="$HOME/vault"
 # --- Ensure config directories exist ---
 
 mkdir -p "$CLAUDE_HOME"
+mkdir -p "$CLAUDE_HOME/skills"
 mkdir -p "$AGENTS_HOME/skills"
 
 # --- Symlink CLAUDE.md ---
@@ -76,6 +77,16 @@ else
   echo "  Private skills (project-pricing, evaluate-sponsor, process-booking) won't be available"
   echo "  until the vault syncs."
 fi
+
+# --- Mirror installed agent skills into Claude Code ---
+
+for skill_link in "$AGENTS_HOME"/skills/*; do
+  [ -e "$skill_link" ] || continue
+  name=$(basename "$skill_link")
+  rm -rf "$CLAUDE_HOME/skills/$name"
+  ln -sfn "$skill_link" "$CLAUDE_HOME/skills/$name"
+done
+echo "Mirrored $(find "$AGENTS_HOME/skills" -mindepth 1 -maxdepth 1 -type l 2>/dev/null | wc -l | tr -d ' ') skills into ~/.claude/skills"
 
 echo ""
 echo "Done. Claude Code global config and agent skills are ready."
