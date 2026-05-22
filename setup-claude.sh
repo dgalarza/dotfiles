@@ -1,15 +1,18 @@
 #!/bin/bash
 #
-# Sets up Claude Code global config by symlinking from dotfiles
-# and connecting private skills from the Obsidian vault.
+# Sets up Claude Code global config and agent skills by symlinking from
+# dotfiles and connecting private skills from the Obsidian vault.
 #
 # Usage: ./setup-claude.sh
 #
 
 set -euo pipefail
 
-DOTFILES_CLAUDE="$(cd "$(dirname "$0")" && pwd)/.claude"
+DOTFILES_ROOT="$(cd "$(dirname "$0")" && pwd)"
+DOTFILES_CLAUDE="$DOTFILES_ROOT/.claude"
+DOTFILES_AGENT_SKILLS="$DOTFILES_ROOT/.agents/skills"
 CLAUDE_HOME="$HOME/.claude"
+AGENTS_HOME="$HOME/.agents"
 
 # --- Obsidian Vault Symlink ---
 
@@ -35,35 +38,26 @@ fi
 
 VAULT="$HOME/vault"
 
-# --- Ensure ~/.claude directories exist ---
+# --- Ensure config directories exist ---
 
-mkdir -p "$CLAUDE_HOME/skills"
-mkdir -p "$CLAUDE_HOME/commands"
+mkdir -p "$CLAUDE_HOME"
+mkdir -p "$AGENTS_HOME/skills"
 
 # --- Symlink CLAUDE.md ---
 
 ln -sf "$DOTFILES_CLAUDE/CLAUDE.md" "$CLAUDE_HOME/CLAUDE.md"
 echo "Linked CLAUDE.md"
 
-# --- Symlink commands ---
+# --- Symlink public agent skills from dotfiles ---
 
-for cmd in "$DOTFILES_CLAUDE"/commands/*.md; do
-  [ -f "$cmd" ] || continue
-  name=$(basename "$cmd")
-  ln -sf "$cmd" "$CLAUDE_HOME/commands/$name"
-  echo "Linked command: $name"
-done
-
-# --- Symlink public skills from dotfiles ---
-
-for skill_dir in "$DOTFILES_CLAUDE"/skills/*/; do
+for skill_dir in "$DOTFILES_AGENT_SKILLS"/*/; do
   [ -d "$skill_dir" ] || continue
   name=$(basename "$skill_dir")
   # Remove existing (file, dir, or broken symlink) before linking
-  rm -rf "$CLAUDE_HOME/skills/$name"
-  ln -sfn "$skill_dir" "$CLAUDE_HOME/skills/$name"
+  rm -rf "$AGENTS_HOME/skills/$name"
+  ln -sfn "$skill_dir" "$AGENTS_HOME/skills/$name"
 done
-echo "Linked $(ls -d "$DOTFILES_CLAUDE"/skills/*/ 2>/dev/null | wc -l | tr -d ' ') public skills from dotfiles"
+echo "Linked $(ls -d "$DOTFILES_AGENT_SKILLS"/*/ 2>/dev/null | wc -l | tr -d ' ') public skills from dotfiles"
 
 # --- Symlink private skills from Obsidian vault ---
 
@@ -73,8 +67,8 @@ if [ -d "$VAULT_SKILLS" ]; then
   for skill_dir in "$VAULT_SKILLS"/*/; do
     [ -d "$skill_dir" ] || continue
     name=$(basename "$skill_dir")
-    rm -rf "$CLAUDE_HOME/skills/$name"
-    ln -sfn "$skill_dir" "$CLAUDE_HOME/skills/$name"
+    rm -rf "$AGENTS_HOME/skills/$name"
+    ln -sfn "$skill_dir" "$AGENTS_HOME/skills/$name"
   done
   echo "Linked $(ls -d "$VAULT_SKILLS"/*/ 2>/dev/null | wc -l | tr -d ' ') private skills from vault"
 else
@@ -84,7 +78,7 @@ else
 fi
 
 echo ""
-echo "Done. Claude Code global config is ready."
+echo "Done. Claude Code global config and agent skills are ready."
 echo ""
 echo "Note: settings.local.json is machine-specific and not managed by this script."
 echo "If you need to add ~/vault as an additionalDirectory for a project,"
