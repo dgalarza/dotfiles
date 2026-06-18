@@ -124,7 +124,7 @@ fi
 
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
-. "$HOME/.atuin/bin/env"
+[[ -f "$HOME/.atuin/bin/env" ]] && source "$HOME/.atuin/bin/env"
 
 # opencode
 export PATH=$HOME/.opencode/bin:$PATH

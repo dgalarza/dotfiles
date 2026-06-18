@@ -92,9 +92,9 @@ Custom scripts in `.local/bin/`:
 
 ## Claude Code
 
-Global [Claude Code](https://docs.anthropic.com/en/docs/claude-code) configuration lives in `.claude/`. This includes a global `CLAUDE.md` with cross-project context, slash commands, and reusable skills (marketing, content strategy, CRO, SEO, and more).
+Global [Claude Code](https://docs.anthropic.com/en/docs/claude-code) configuration lives in `.claude/`. Agent skills live in `.agents/skills/` so they can be shared across agents and bootstrapped into `~/.agents/skills/`, then mirrored into `~/.claude/skills/` for Claude Code.
 
-Run the setup script to symlink everything into `~/.claude/`:
+Run the setup script to symlink Claude config into `~/.claude/`, public/private agent skills into `~/.agents/skills/`, and compatibility links into `~/.claude/skills/`:
 
 ```bash
 ./setup-claude.sh
@@ -107,4 +107,5 @@ The script also sets up a `~/vault` symlink to your Obsidian vault for private s
 - `.zshrc` at the repo root
 - Tool configs under `.config/` (Ghostty, Tmux, Neovim, Starship, AeroSpace)
 - Custom scripts in `.local/bin/`
-- `.claude/` for Claude Code global config (skills, commands, CLAUDE.md)
+- `.claude/` for Claude Code global config (`CLAUDE.md`, settings)
+- `.agents/skills/` for reusable public agent skills
