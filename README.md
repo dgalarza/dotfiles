@@ -16,20 +16,9 @@ unmanaged because it contains local calendar configuration.
 
 ## Theme
 
-[Catppuccin Mocha](https://github.com/catppuccin/catppuccin) is applied across the entire stack: Ghostty, Tmux, Neovim, Starship, and Eza. One palette, everywhere.
+Theme configuration is now platform-specific. The macOS setup uses [Catppuccin Mocha](https://github.com/catppuccin/catppuccin) across Ghostty, Tmux, Neovim, and Starship. Omarchy uses its active system theme, including the personal `damian-galarza` theme in this repository.
 
-## Terminal
-
-**[Ghostty](https://ghostty.org)** is the terminal emulator. Font size 18, with a quick terminal toggle bound to `Alt+t`.
-
-**[Zsh](https://www.zsh.org/)** is the shell, managed with [Zinit](https://github.com/zdharma-continuum/zinit). Four plugins, all turbo-loaded:
-
-- `zsh-autosuggestions`
-- `zsh-syntax-highlighting`
-- `zsh-completions`
-- `zsh-history-substring-search`
-
-**[Starship](https://starship.rs)** handles the prompt. Minimal layout with the directory on the left and git info (branch, state, status) on the right.
+**[Starship](https://starship.rs)** handles the shared prompt. It uses a minimal layout with the directory on the left and git info (branch, state, status) on the right.
 
 ## Tmux
 
