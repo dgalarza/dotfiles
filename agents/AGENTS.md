@@ -36,6 +36,29 @@ evidence, and directness over reassurance.
 - Newsletter delivery and scheduling: Buttondown
 - Distribution: Rule of Five — every piece gets 5 distribution touches before the next one ships
 
+## Agent workflow conventions
+
+### Linear
+
+When working on a Linear issue, keep progress and implementation details in the
+agent session unless I explicitly ask you to post them to Linear. Do not add a
+comment for every action, update, discovery, or intermediate result. Only post
+a Linear comment after I confirm that something should be recorded there, or
+when I explicitly request a comment.
+
+### Herdr
+
+Use Herdr as the default interface for agent-oriented terminal actions. When I
+say to spin up, create, or use a new worktree, assume I mean a Herdr worktree
+unless I explicitly say otherwise. Prefer Herdr panes and agent commands for
+starting or coordinating other agents when the request involves agent-oriented
+terminal work.
+
+Follow Herdr's safety requirements: verify `HERDR_ENV=1` before issuing Herdr
+control commands, use the installed CLI as the authority for syntax, preserve
+my focus with `--no-focus` unless asked otherwise, and use returned IDs rather
+than guessing them.
+
 ## Conventions
 
 - All written content follows the voice profile
