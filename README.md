@@ -16,7 +16,9 @@ unmanaged because it contains local calendar configuration.
 
 ## Theme
 
-Theme configuration is now platform-specific. The macOS setup uses [Catppuccin Mocha](https://github.com/catppuccin/catppuccin) across Ghostty, Tmux, Neovim, and Starship. Omarchy uses its active system theme, including the personal `damian-galarza` theme in this repository.
+Theme configuration is platform-specific. The macOS theme is documented in
+`macos/README.md`; Omarchy uses its active system theme, including the personal
+`damian-galarza` theme in this repository.
 
 **[Starship](https://starship.rs)** handles the shared prompt. It uses a minimal layout with the directory on the left and git info (branch, state, status) on the right.
 
@@ -45,25 +47,6 @@ Plugins managed by [TPM](https://github.com/tmux-plugins/tpm):
 | tmux-floax | Floating pane toggle |
 | tmux-huckleberry | Git branch switcher |
 
-## Editor
-
-[Neovim](https://neovim.io) with [LazyVim](https://www.lazyvim.org) as the base distribution. Catppuccin colorscheme, leader key set to `,`.
-
-LazyVim extras enabled:
-
-- Copilot
-- mini-surround
-- DAP (core)
-- FZF
-- Scala
-- SQL
-- Test (core)
-
-Additional plugins:
-
-- [nvim-metals](https://github.com/scalameta/nvim-metals) for Scala LSP via Metals
-- [nvim-dap](https://github.com/mfussenegger/nvim-dap) configured for Scala debugging
-
 ## CLI Tools
 
 | Tool | Purpose |
@@ -76,7 +59,9 @@ Additional plugins:
 
 ## Window Management
 
-On macOS, [AeroSpace](https://github.com/nikitabobko/AeroSpace) is a tiling window manager with i3-style keybindings. On Omarchy, Hyprland and the Omarchy shell provide window management, the bar, menus, and notifications.
+macOS window-management details are documented in `macos/README.md`. Omarchy
+window management is provided by Omarchy and customized under `omarchy/` in
+this repository.
 
 ## Git
 
