@@ -94,7 +94,7 @@ and skills:
 ./setup-agents.sh
 ```
 
-The script also sets up a `~/vault` symlink to your Obsidian vault for private skills and business context that shouldn't live in a public repo.
+Private skills, credentials, and other machine-specific agent state are intentionally not managed by this public repository.
 
 ## Repo Structure
 

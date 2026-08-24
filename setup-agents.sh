@@ -12,15 +12,6 @@ if [[ ! -f "$AGENTS_SOURCE" ]]; then
   exit 1
 fi
 
-# --- Optional Obsidian Vault ---
-# The shared agent context does not require the vault. Set VAULT_PATH to create
-# the conventional ~/vault link, or configure it separately later.
-if [[ -n "${VAULT_PATH:-}" ]]; then
-  [[ -d "$VAULT_PATH" ]] || { echo "Error: VAULT_PATH '$VAULT_PATH' does not exist." >&2; exit 1; }
-  ln -sfn "$VAULT_PATH" "$HOME/vault"
-fi
-VAULT="$HOME/vault"
-
 # All agents share one canonical context file, with the filename each tool expects.
 mkdir -p "$HOME/.codex" "$HOME/.pi/agent" "$CLAUDE_HOME"
 ln -sfn "$AGENTS_SOURCE" "$HOME/.codex/AGENTS.md"
@@ -42,17 +33,4 @@ for skill_dir in "$CLAUDE_SOURCE"/skills/*/; do
   ln -sfn "$skill_dir" "$CLAUDE_HOME/skills/$name"
 done
 
-# Private skills remain in the vault and are never copied into this repository.
-VAULT_SKILLS="$VAULT/2-Areas/Claude Code/skills"
-if [[ -d "$VAULT_SKILLS" ]]; then
-  for skill_dir in "$VAULT_SKILLS"/*/; do
-    [[ -d "$skill_dir" ]] || continue
-    name=$(basename "$skill_dir")
-    rm -rf "$CLAUDE_HOME/skills/$name"
-    ln -sfn "$skill_dir" "$CLAUDE_HOME/skills/$name"
-  done
-else
-  echo "Warning: vault skills directory not found at $VAULT_SKILLS" >&2
-fi
-
-echo "Done. settings.local.json and other machine-specific state remain unmanaged."
+echo "Done. Machine-specific settings and private skills remain unmanaged."
