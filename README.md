@@ -78,12 +78,20 @@ Custom scripts in `.local/bin/`:
 
 ## Claude Code
 
-Global [Claude Code](https://docs.anthropic.com/en/docs/claude-code) configuration lives in `.claude/`. This includes a global `CLAUDE.md` with cross-project context, slash commands, and reusable skills (marketing, content strategy, CRO, SEO, and more).
+## Agent configuration
 
-Run the setup script to symlink everything into `~/.claude/`:
+Shared global context lives in `agents/AGENTS.md` and is linked to the locations
+expected by Codex, Pi, and Claude Code:
+
+- `~/.codex/AGENTS.md`
+- `~/.pi/agent/AGENTS.md`
+- `~/.claude/CLAUDE.md`
+
+Run the setup script to create those links and install the Claude Code commands
+and skills:
 
 ```bash
-./setup-claude.sh
+./setup-agents.sh
 ```
 
 The script also sets up a `~/vault` symlink to your Obsidian vault for private skills and business context that shouldn't live in a public repo.
@@ -93,7 +101,9 @@ The script also sets up a `~/vault` symlink to your Obsidian vault for private s
 - `common/` — shared shell, Git, Tmux, Starship, and scripts
 - `macos/` — AeroSpace, Ghostty, and the macOS Neovim configuration
 - `omarchy/` — Hyprland, Omarchy Neovim, personal shell plugins, theme, and scripts
-- `.claude/` — Claude Code global config
+- `agents/` — shared global agent context
+- `.claude/` — Claude Code commands and skills
+- `setup-agents.sh` — links shared agent context and Claude Code resources
 - `install.sh` — platform-aware Stow installer
 
 Third-party Omarchy plugins such as `omasnap`, `tobiasz-p.next-event`, and
