@@ -1,6 +1,18 @@
 # Dotfiles
 
-My personal dotfiles for macOS. This is a living config that changes as I try new tools and workflows. If you found this from one of my [YouTube videos](https://youtube.com/@damian.galarza), you're in the right place.
+My personal cross-platform dotfiles for macOS and Omarchy. This is a living config that changes as I try new tools and workflows. If you found this from one of my [YouTube videos](https://youtube.com/@damian.galarza), you're in the right place.
+
+## Install
+
+From a checkout of this repository:
+
+```bash
+./install.sh
+```
+
+The installer uses GNU Stow to install `common`, then the platform package:
+`macos` on macOS or `omarchy` on Omarchy. It leaves Omarchy's `shell.json`
+unmanaged because it contains local calendar configuration.
 
 ## Theme
 
@@ -75,7 +87,7 @@ Additional plugins:
 
 ## Window Management
 
-[AeroSpace](https://github.com/nikitabobko/AeroSpace) is a tiling window manager for macOS with i3-style keybindings. Workspaces are bound to `Ctrl+1-9`, window focus uses `Alt+j/k/l/;`, and `Alt+Enter` opens a new Ghostty window.
+On macOS, [AeroSpace](https://github.com/nikitabobko/AeroSpace) is a tiling window manager with i3-style keybindings. On Omarchy, Hyprland and the Omarchy shell provide window management, the bar, menus, and notifications.
 
 ## Git
 
@@ -104,7 +116,12 @@ The script also sets up a `~/vault` symlink to your Obsidian vault for private s
 
 ## Repo Structure
 
-- `.zshrc` at the repo root
-- Tool configs under `.config/` (Ghostty, Tmux, Neovim, Starship, AeroSpace)
-- Custom scripts in `.local/bin/`
-- `.claude/` for Claude Code global config (skills, commands, CLAUDE.md)
+- `common/` — shared shell, Git, Tmux, Starship, and scripts
+- `macos/` — AeroSpace, Ghostty, and the macOS Neovim configuration
+- `omarchy/` — Hyprland, Omarchy Neovim, personal shell plugins, theme, and scripts
+- `.claude/` — Claude Code global config
+- `install.sh` — platform-aware Stow installer
+
+Third-party Omarchy plugins such as `omasnap`, `tobiasz-p.next-event`, and
+`io.github.dgalarza.omarchy-buds` are managed separately. The Buds plugin also
+requires `GalaxyBudsClient` (the `galaxybudsclient` command).
