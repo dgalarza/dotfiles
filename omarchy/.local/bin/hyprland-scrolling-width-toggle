@@ -1,0 +1,27 @@
+#!/bin/bash
+
+set -euo pipefail
+
+workspace_json=$(hyprctl activeworkspace -j)
+workspace_id=$(jq -r '.id' <<<"$workspace_json")
+layout=$(jq -r '.tiledLayout' <<<"$workspace_json")
+monitor=$(jq -r '.monitor' <<<"$workspace_json")
+
+if [[ $layout != "scrolling" ]]; then
+  omarchy-notification-send "Full-width columns require scrolling layout"
+  exit 0
+fi
+
+monitor_width=$(hyprctl monitors -j | jq -r --arg monitor "$monitor" '.[] | select(.name == $monitor) | .width / .scale')
+column_width=$(hyprctl clients -j | jq -r --argjson workspace "$workspace_id" '[.[] | select(.workspace.id == $workspace and .floating == false)][0].size[0] // 0')
+
+if awk -v column="$column_width" -v monitor="$monitor_width" 'BEGIN { exit !(column >= monitor * 0.75) }'; then
+  target=0.49
+  message="Scrolling columns set to half width"
+else
+  target=0.90
+  message="Scrolling columns set to wide"
+fi
+
+hyprctl dispatch "hl.dsp.layout(\"colresize all $target\")" >/dev/null
+omarchy-notification-send "$message"

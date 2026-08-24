@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# Move numbered workspaces to the Dell AW3423DW whenever it connects.
+# Hyprland automatically moves them back to the laptop when it disconnects.
+
+set -u
+
+runtime_dir="${XDG_RUNTIME_DIR:-/tmp}"
+socket="$runtime_dir/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock"
+
+# Keep config reloads or accidental duplicate launches from creating watchers.
+exec 9>"$runtime_dir/omarchy-dell-workspace-watch.lock"
+flock -n 9 || exit 0
+
+find_dell() {
+  hyprctl monitors -j 2>/dev/null |
+    jq -r '.[] | select(.make == "Dell Inc." and ((.model // "") | startswith("Dell AW3423DW"))) | .name' |
+    head -n 1
+}
+
+move_workspaces_to_dell() {
+  local delay="${1:-0}"
+  local monitor workspace
+
+  sleep "$delay"
+  monitor="$(find_dell)"
+  [[ -n "$monitor" ]] || return 0
+
+  # Move occupied numbered workspaces. Hyprland always leaves one active
+  # workspace on the laptop, so moving empty workspaces would only create a
+  # new empty replacement. Special workspaces such as scratchpad stay put.
+  while IFS= read -r workspace; do
+    [[ -n "$workspace" ]] || continue
+
+    # The current Lua dispatcher moves the active workspace, so focus the
+    # requested workspace first and then move it to the Dell.
+    hyprctl dispatch "hl.dsp.focus({ workspace = \"$workspace\" })" >/dev/null
+    hyprctl dispatch "hl.dsp.workspace.move({ monitor = \"$monitor\" })" >/dev/null
+  done < <(
+    hyprctl workspaces -j |
+      jq -r --arg monitor "$monitor" '.[] | select(.id > 0 and .windows > 0 and .monitor != $monitor) | .id' |
+      sort -n
+  )
+
+  hyprctl dispatch "hl.dsp.focus({ monitor = \"$monitor\" })" >/dev/null
+}
+
+# Handle a Dell that was already connected when the session started.
+move_workspaces_to_dell 1
+
+while IFS= read -r event; do
+  case "$event" in
+    monitoradded\>\>*|monitoraddedv2\>\>*)
+      # Give Hyprland time to finish applying the monitor layout.
+      move_workspaces_to_dell 1
+      ;;
+  esac
+done < <(socat -U - "UNIX-CONNECT:$socket")
